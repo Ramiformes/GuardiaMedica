@@ -1,0 +1,232 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Escala SLEDAI-2K
+{% endblock %}
+
+{% block main %}
+<h2>Escala SLEDAI-2K para Lupus Eritematoso Sistémico</h2>
+<form id="sledaiForm">
+
+    <!-- Sección de crisis convulsivas recientes -->
+    <div class="col-md-6">
+        <label for="recentSeizure" class="form-label">Crisis convulsivas recientes</label>
+        <select class="form-control" id="recentSeizure" name="recentSeizure">
+            <option value="0">No</option>
+            <option value="8">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de psicosis -->
+    <div class="col-md-6">
+        <label for="psychosis" class="form-label">Psicosis</label>
+        <select class="form-control" id="psychosis" name="psychosis">
+            <option value="0">No</option>
+            <option value="8">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de síndrome cerebral orgánico -->
+    <div class="col-md-6">
+        <label for="organicBrainSyndrome" class="form-label">Síndrome cerebral orgánico</label>
+        <select class="form-control" id="organicBrainSyndrome" name="organicBrainSyndrome">
+            <option value="0">No</option>
+            <option value="8">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de alteración visual -->
+    <div class="col-md-6">
+        <label for="visualDisturbance" class="form-label">Alteración visual</label>
+        <select class="form-control" id="visualDisturbance" name="visualDisturbance">
+            <option value="0">No</option>
+            <option value="8">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de neuropatía sensorial o motora -->
+    <div class="col-md-6">
+        <label for="neuropathy" class="form-label">Neuropatía sensorial o motora</label>
+        <select class="form-control" id="neuropathy" name="neuropathy">
+            <option value="0">No</option>
+            <option value="8">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de cefalea lupus -->
+    <div class="col-md-6">
+        <label for="lupusHeadache" class="form-label">Cefalea lupus</label>
+        <select class="form-control" id="lupusHeadache" name="lupusHeadache">
+            <option value="0">No</option>
+            <option value="8">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de nuevo evento cerebrovascular -->
+    <div class="col-md-6">
+        <label for="newStroke" class="form-label">Nuevo evento cerebrovascular</label>
+        <select class="form-control" id="newStroke" name="newStroke">
+            <option value="0">No</option>
+            <option value="8">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de vasculitis -->
+    <div class="col-md-6">
+        <label for="vasculitis" class="form-label">Vasculitis</label>
+        <select class="form-control" id="vasculitis" name="vasculitis">
+            <option value="0">No</option>
+            <option value="8">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de artritis -->
+    <div class="col-md-6">
+        <label for="arthritis" class="form-label">Artritis</label>
+        <select class="form-control" id="arthritis" name="arthritis">
+            <option value="0">No</option>
+            <option value="4">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de miositis -->
+    <div class="col-md-6">
+        <label for="myositis" class="form-label">Miositis</label>
+        <select class="form-control" id="myositis" name="myositis">
+            <option value="0">No</option>
+            <option value="4">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de hematuria -->
+    <div class="col-md-6">
+        <label for="hematuria" class="form-label">Hematuria</label>
+        <select class="form-control" id="hematuria" name="hematuria">
+            <option value="0">No</option>
+            <option value="4">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de proteinuria -->
+    <div class="col-md-6">
+        <label for="proteinuria" class="form-label">Proteinuria >0.5 g/día</label>
+        <select class="form-control" id="proteinuria" name="proteinuria">
+            <option value="0">No</option>
+            <option value="4">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de piuria -->
+    <div class="col-md-6">
+        <label for="pyuria" class="form-label">Piuria</label>
+        <select class="form-control" id="pyuria" name="pyuria">
+            <option value="0">No</option>
+            <option value="4">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de erupción cutánea inflamatoria -->
+    <div class="col-md-6">
+        <label for="inflammatoryRash" class="form-label">Erupción cutánea inflamatoria</label>
+        <select class="form-control" id="inflammatoryRash" name="inflammatoryRash">
+            <option value="0">No</option>
+            <option value="2">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de alopecia -->
+    <div class="col-md-6">
+        <label for="alopecia" class="form-label">Alopecia</label>
+        <select class="form-control" id="alopecia" name="alopecia">
+            <option value="0">No</option>
+            <option value="2">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de úlceras orales o nasales -->
+    <div class="col-md-6">
+        <label for="oralNasalUlcers" class="form-label">Úlceras orales o nasales</label>
+        <select class="form-control" id="oralNasalUlcers" name="oralNasalUlcers">
+            <option value="0">No</option>
+            <option value="2">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de dolor pleurítico -->
+    <div class="col-md-6">
+        <label for="pleuriticPain" class="form-label">Dolor pleurítico</label>
+        <select class="form-control" id="pleuriticPain" name="pleuriticPain">
+            <option value="0">No</option>
+            <option value="2">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de pericarditis -->
+    <div class="col-md-6">
+        <label for="pericarditis" class="form-label">Pericarditis</label>
+        <select class="form-control" id="pericarditis" name="pericarditis">
+            <option value="0">No</option>
+            <option value="2">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de complemento bajo -->
+    <div class="col-md-6">
+        <label for="lowComplement" class="form-label">Complemento bajo</label>
+        <select class="form-control" id="lowComplement" name="lowComplement">
+            <option value="0">No</option>
+            <option value="2">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de alta unión de ADN -->
+    <div class="col-md-6">
+        <label for="highDnaBinding" class="form-label">Alta unión de ADN</label>
+        <select class="form-control" id="highDnaBinding" name="highDnaBinding">
+            <option value="0">No</option>
+            <option value="2">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de temperatura -->
+    <div class="col-md-6">
+        <label for="temperature" class="form-label">Temperatura >100.4 °F (38°C)</label>
+        <select class="form-control" id="temperature" name="temperature">
+            <option value="0">No</option>
+            <option value="1">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de plaquetas bajas -->
+    <div class="col-md-6">
+        <label for="lowPlatelets" class="form-label">Plaquetas <100 x 109/L</label>
+        <select class="form-control" id="lowPlatelets" name="lowPlatelets">
+            <option value="0">No</option>
+            <option value="1">Sí</option>
+        </select>
+    </div>
+
+    <!-- Sección de WBC bajo -->
+    <div class="col-md-6">
+        <label for="lowWbc" class="form-label">WBC <3 x 109/L</label>
+        <select class="form-control" id="lowWbc" name="lowWbc">
+            <option value="0">No</option>
+            <option value="1">Sí</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary" id="calcularButton">Calcular</button>
+
+
+
+</form>
+<p>Puntuación total SLEDAI-2K: <span id="sledaiScore">-</span></p>
+
+<hr>
+
+<h3>Recomendaciones clínicas para el manejo de pacientes con LES</h3>
+<ul>
+    <!-- ... Las recomendaciones que ya has incluido ... -->
+</ul>
+
+{% endblock %}

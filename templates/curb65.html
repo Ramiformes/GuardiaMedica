@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    CURB 65
+{% endblock %}
+
+{% block main %}
+
+<form id="curb65Form">
+    <h2>Calculadora CURB-65</h2>
+
+    <label for="confusion">¿Confusión mental?</label>
+    <select id="confusion" name="confusion">
+        <option value="no">No</option>
+        <option value="si">Sí</option>
+    </select>
+    <br>
+
+    <label for="urea">Nivel de urea (mg/dL):</label>
+    <input type="number" id="urea" name="urea" required>
+    <br>
+
+    <label for="frecuencia_respiratoria">Frecuencia respiratoria (respiraciones por minuto):</label>
+    <input type="number" id="frecuencia_respiratoria" name="frecuencia_respiratoria" required>
+    <br>
+
+    <label for="presion_sistolica">Presión sistólica (mmHg):</label>
+    <input type="number" id="presion_sistolica" name="presion_sistolica" required>
+    <br>
+
+    <label for="presion_diastolica">Presión diastólica (mmHg):</label>
+    <input type="number" id="presion_diastolica" name="presion_diastolica" required>
+    <br>
+
+    <label for="edad">Edad (años):</label>
+    <input type="number" id="edad" name="edad" required>
+    <br>
+
+    <input type="submit" value="Calcular">
+</form>
+
+<h3 id="resultadoCurb65">Score CURB-65: </h3>
+
+<hr>
+
+<h3>Información Clínica sobre CURB-65</h3>
+<p>El score CURB-65 es una herramienta clínica utilizada para evaluar la gravedad de la neumonía y determinar el nivel de cuidado que un paciente puede requerir. Se basa en cinco criterios:</p>
+<ul>
+    <li><strong>C:</strong> Confusión mental.</li>
+    <li><strong>U:</strong> Urea > 7 mmol/L (o > 20 mg/dL).</li>
+    <li><strong>R:</strong> Frecuencia respiratoria ≥ 30 respiraciones por minuto.</li>
+    <li><strong>B:</strong> Presión arterial sistólica < 90 mmHg o diastólica ≤ 60 mmHg.</li>
+    <li><strong>65:</strong> Edad ≥ 65 años.</li>
+</ul>
+<p>La puntuación total varía de 0 a 5. Una puntuación de:</p>
+<ul>
+    <li>0-1 sugiere un bajo riesgo y el paciente puede ser considerado para tratamiento ambulatorio.</li>
+    <li>2 indica un riesgo moderado y se sugiere hospitalización.</li>
+    <li>3-5 indica un alto riesgo y se debe considerar la admisión a cuidados intensivos.</li>
+</ul>
+<p>Es esencial correlacionar el score CURB-65 con la presentación clínica del paciente y considerar otros factores clínicos al decidir el nivel de cuidado.</p>
+
+{% endblock %}

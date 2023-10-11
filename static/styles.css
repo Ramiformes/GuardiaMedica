@@ -1,0 +1,46 @@
+/* Estilizar el div con la clase "container" */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilizar el margen superior (mt-4) */
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+/* darle formato al título */
+.Bienvenido {
+    width: 0 auto;
+    margin: 50px;
+    background-color: grey;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 4px 10px rgba(4, 8, 3, 4);
+}
+
+/*darle formato a la imagen del dr goku */
+.DrGoku {
+    width: 40%;
+    height: 40%;
+}
+
+/* Estilo para los enlaces al pasar el mouse sobre ellos */
+.navbar-nav .nav-link:hover {
+    color: #ff4500;
+    text-decoration: underline;
+}
+
+/* Estilo para el botón seleccionado */
+.btn-selected {
+    background-color: #007BFF !important;
+    color: #FFFFFF !important;
+}
+
+.spacing {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Semanas de gestación
+{% endblock %}
+
+{% block main %}
+<h2>Semanas de Gestación y Fecha Probable de Parto</h2>
+    <form id="gestationForm">
+        <div class="col-md-6">
+            <label for="fum" class="form-label">Fecha de Última Menstruación (FUM)</label>
+            <input type="date" class="form-control" id="fum" name="fum">
+        </div>
+
+        <div class="col-md-6">
+            <label for="ultrasoundDate" class="form-label">Fecha del Ultrasonido</label>
+            <input type="date" class="form-control" id="ultrasoundDate" name="ultrasoundDate">
+        </div>
+
+        <div class="col-md-6">
+            <label for="ultrasoundWeeks" class="form-label">Semanas por Ultrasonido</label>
+            <input type="number" class="form-control" id="ultrasoundWeeks" name="ultrasoundWeeks">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Calcular</button>
+    </form>
+    <p>Semanas de Gestación por FUM: <span id="gestationWeeksFUM">-</span></p>
+    <p>Fecha Probable de Parto por FUM: <span id="fppFUM">-</span></p>
+<p>Semanas de Gestación por Ultrasonido: <span id="gestationWeeksUltrasound">-</span></p>
+<p>Fecha Probable de Parto por Ultrasonido: <span id="fppUltrasound">-</span></p>
+
+<hr>
+
+    <h3>Estudios recomendados durante el embarazo</h3>
+    <ul>
+        <li>Pruebas de laboratorio: Hemograma completo, grupo sanguíneo y factor Rh, pruebas de coagulación, glucosa, perfil tiroideo, serologías (VIH, VDRL, hepatitis B y C, toxoplasmosis).</li>
+        <li>Ultrasonido obstétrico: Al menos tres durante el embarazo (primer, segundo y tercer trimestre).</li>
+        <li>Prueba de Papanicolaou si no se ha realizado en el último año.</li>
+        <li>Prueba de tolerancia a la glucosa entre las semanas 24 y 28 para descartar diabetes gestacional.</li>
+        <li>Monitoreo fetal a partir de la semana 32 en embarazos de alto riesgo.</li>
+        <li>Urocultivo para descartar infecciones urinarias.</li>
+    </ul>
+
+    <h3>Vacunas recomendadas durante el embarazo</h3>
+    <ul>
+        <li><strong>Tétanos y difteria (Td):</strong> Se recomienda en embarazadas que no estén al día con la vacuna.</li>
+        <li><strong>Tos ferina (DTPa):</strong> Se recomienda entre las semanas 27 y 36 de gestación, en cada embarazo.</li>
+        <li><strong>Influenza:</strong> Se puede administrar en cualquier momento del embarazo y es especialmente importante en épocas de brote.</li>
+        <li><strong>Hepatitis B:</strong> En embarazadas con factores de riesgo.</li>
+    </ul>
+    <p>Es esencial que las embarazadas consulten con su médico sobre los estudios y vacunas recomendadas según su situación particular y antecedentes médicos.</p>
+
+{% endblock %}

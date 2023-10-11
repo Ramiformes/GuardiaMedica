@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    IMC
+{% endblock %}
+
+{% block main %}
+
+<form id="form-imc">
+    <h2>Calculadora de Índice de Masa Corporal</h2>
+    <label for="altura">Altura en metros</label>
+    <input type="number" id="altura" name="altura" step="0.01" required>
+    <div class="spacing"></div>
+    <label for="peso">Peso en kilogramos</label>
+    <input type="number" id="peso" name="peso" step="0.01" required>
+    <div class="spacing"></div>
+    <input type="submit" value="calcular">
+</form>
+<h3 id="resultadoimc">Índice de masa corporal: </h3>
+
+<hr>
+
+<h3>Información Clínica sobre el Índice de Masa Corporal (IMC)</h3>
+<p>El IMC es una herramienta utilizada para evaluar el estado nutricional de un individuo en relación con su peso y altura. Proporciona una medida aproximada de la grasa corporal total y se utiliza para determinar categorías de peso que pueden indicar problemas de salud.</p>
+
+<h4>Rangos de IMC</h4>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Categoría</th>
+            <th>Rango de IMC</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Bajo peso</td>
+            <td>< 18.5</td>
+        </tr>
+        <tr>
+            <td>Peso normal</td>
+            <td>18.5 - 24.9</td>
+        </tr>
+        <tr>
+            <td>Sobrepeso</td>
+            <td>25 - 29.9</td>
+        </tr>
+        <tr>
+            <td>Obesidad grado I</td>
+            <td>30 - 34.9</td>
+        </tr>
+        <tr>
+            <td>Obesidad grado II</td>
+            <td>35 - 39.9</td>
+        </tr>
+        <tr>
+            <td>Obesidad grado III (Obesidad mórbida)</td>
+            <td>≥ 40</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Es importante tener en cuenta que el IMC no distingue entre peso de grasa y peso de músculo, por lo que puede no reflejar con precisión la salud de todos los individuos. Siempre es esencial considerar otros factores y pruebas al evaluar el estado de salud de un paciente.</p>
+
+{% endblock %}

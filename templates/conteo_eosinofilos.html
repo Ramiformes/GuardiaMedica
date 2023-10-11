@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Conteo Absoluto de Eosinófilos
+{% endblock %}
+
+{% block main %}
+
+<form id="eosinofilosForm">
+    <h2>Calculadora de Conteo Absoluto de Eosinófilos</h2>
+
+    <label for="wbc">WBC (conteo de glóbulos blancos) (x10^9/L):</label>
+    <input type="number" id="wbc" name="wbc" step="0.01" required>
+    <br>
+
+    <label for="eosinofilos">Porcentaje de Eosinófilos (%):</label>
+    <input type="number" id="eosinofilos" name="eosinofilos" step="0.01" required>
+    <br>
+
+    <input type="submit" value="Calcular">
+</form>
+
+<h3 id="resultadoEosinofilos">Conteo Absoluto de Eosinófilos: </h3>
+
+<hr>
+
+<h3>Información Clínica sobre Eosinófilos</h3>
+<p>Los eosinófilos desempeñan un papel fundamental en la defensa contra infecciones parasitarias y en la patogénesis de enfermedades alérgicas. Un aumento en el conteo de eosinófilos, conocido como eosinofilia, puede ser indicativo de diversas condiciones:</p>
+<ul>
+    <li><strong>Infecciones parasitarias:</strong> Ascariasis, toxocariasis, trichinosis, filariasis.</li>
+    <li><strong>Enfermedades alérgicas:</strong> Asma bronquial, rinitis alérgica, dermatitis atópica, síndrome de Churg-Strauss.</li>
+    <li><strong>Enfermedades del tejido conectivo:</strong> Lupus eritematoso sistémico, síndrome de Sjögren, esclerodermia.</li>
+    <li><strong>Neoplasias:</strong> Leucemia eosinofílica, linfoma de Hodgkin, tumores sólidos con infiltración eosinofílica.</li>
+    <li><strong>Reacciones a medicamentos:</strong> Reacciones a antibióticos como la penicilina, antiinflamatorios no esteroides, antiepilépticos, entre otros.</li>
+</ul>
+<p>Es esencial correlacionar el conteo elevado de eosinófilos con la presentación clínica del paciente y considerar estudios adicionales para determinar la etiología subyacente.</p>
+
+{% endblock %}
+

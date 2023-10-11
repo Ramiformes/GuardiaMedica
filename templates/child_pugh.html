@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Child Pugh
+{% endblock %}
+
+{% block main %}
+    <form id="childPughForm">
+        <h2>Calculadora Child Pugh</h2>
+
+        <label for="bilirrubina">Bilirrubina total (mg/dL):</label>
+        <input type="number" id="bilirrubina" name="bilirrubina" step="0.1" required>
+        <br>
+
+        <label for="albumina">Albúmina sérica (g/dL):</label>
+        <input type="number" id="albumina" name="albumina" step="0.1" required>
+        <br>
+
+        <label for="tiempo_protrombina">Tiempo de protrombina (segundos prolongado):</label>
+        <input type="number" id="tiempo_protrombina" name="tiempo_protrombina" step="0.1" required>
+        <br>
+
+        <label for="ascitis">Ascitis:</label>
+        <select id="ascitis" name="ascitis">
+            <option value="ausente">Ausente</option>
+            <option value="leve">Leve</option>
+            <option value="moderada">Moderada</option>
+        </select>
+        <br>
+
+        <label for="encefalopatia">Encefalopatía hepática:</label>
+        <select id="encefalopatia" name="encefalopatia">
+            <option value="ausente">Ausente</option>
+            <option value="grado I-II">Grado I-II</option>
+            <option value="grado III-IV">Grado III-IV</option>
+        </select>
+        <br>
+
+        <input type="submit" value="Calcular">
+    </form>
+
+    <h3 id="result">Score Child Pugh: </h3>
+    <!-- Aquí se mostrará el resultado -->
+
+    <hr>
+    <h3>Evaluación de la Encefalopatía Hepática</h3>
+    <p>La encefalopatía hepática se clasifica en diferentes grados según la severidad de los síntomas:</p>
+    <ul>
+        <li><strong>Grado I:</strong> Cambios sutiles en la personalidad o en el comportamiento. Puede presentar temblor con movimiento rápido de las manos (asterixis).</li>
+        <li><strong>Grado II:</strong> Letargo o somnolencia, desorientación, comportamiento inapropiado, asterixis evidente, disartria (habla arrastrada).</li>
+        <li><strong>Grado III:</strong> Somnolencia marcada o estupor, pero el paciente puede ser despertado, comportamiento agresivo, asterixis.</li>
+        <li><strong>Grado IV:</strong> Coma, respuesta mínima o nula a estímulos dolorosos.</li>
+    </ul>
+    <p>Es importante identificar y tratar cualquier factor desencadenante de EH, como infecciones, sangrado gastrointestinal o medicamentos. La evaluación y el tratamiento tempranos son esenciales para mejorar el pronóstico del paciente.</p>
+   <hr>
+    <h3>Información Adicional</h3>
+    <p>El score de Child-Pugh es utilizado para evaluar la severidad de la cirrosis hepática y predecir la supervivencia a 1 y 2 años. Se basa en cinco variables clínicas y bioquímicas.</p>
+    <ul>
+        <li>Bilirrubina total</li>
+        <li>Albúmina sérica</li>
+        <li>Tiempo de protrombina</li>
+        <li>Ascitis</li>
+        <li>Encefalopatía hepática</li>
+    </ul>
+    <p>Según el score obtenido, los pacientes se clasifican en tres clases (A, B o C) que indican un pronóstico más favorable (A) o menos favorable (C).</p>
+    <p>Es esencial considerar el contexto clínico del paciente y utilizar el juicio clínico al interpretar los resultados.</p>
+    <hr>
+
+
+
+{% endblock %}

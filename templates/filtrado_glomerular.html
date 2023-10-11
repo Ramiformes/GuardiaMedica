@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Tasa de filtrado glomerular
+{% endblock %}
+
+{% block main %}
+<h2>Tasa de Filtrado Glomerular</h2>
+    <form id="tfgForm">
+        <div class="col-md-4 text-center">
+            <label for="formulaSelect">Selecciona una fórmula:</label>
+            <select id="formulaSelect" name="formula" class="form-control">
+                <option value="cockroft_gault" selected>Cockroft Gault</option>
+                <option value="ckdepi">CKDEPI</option>
+            </select>
+        </div>
+
+        <!-- Aquí se agrega la clase mt-5 para un margen superior más grande -->
+        <div class="col-md-6 mt-5">
+            <label for="edad" class="form-label">Edad (años)</label>
+            <input type="number" class="form-control" id="edad" name="edad" required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="creatinina" class="form-label">Creatinina sérica (mg/dL)</label>
+            <input type="number" class="form-control" id="creatinina" name="creatinina" step="0.01" required>
+        </div>
+        <div class="col-md-6">
+            <label for="peso" class="form-label">Peso (kg)</label>
+            <input type="number" class="form-control" id="peso" name="peso" step="0.1" required>
+        </div>
+        <div class="col-md-6">
+            <label for="sexo" class="form-label">Sexo</label>
+            <select class="form-control" id="sexo" name="sexo">
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="raza" class="form-label">Raza</label>
+            <select class="form-control" id="raza" name="raza">
+                <option value="otra">Otra</option>
+                <option value="negra">Negra</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Calcular</button>
+    </form>
+    <p>Resultado: <span id="resultado">-</span></p>
+
+    <hr>
+
+    <h3>Información Clínica sobre la Tasa de Filtrado Glomerular</h3>
+    <p>La tasa de filtrado glomerular (TFG) es una medida esencial para evaluar la función renal. Es un indicador clave de la función renal y se utiliza para clasificar la gravedad de la enfermedad renal crónica (ERC).</p>
+
+    <h4>Clasificación de la Lesión Renal Aguda</h4>
+    <p>Además de evaluar la ERC, es crucial identificar y clasificar la lesión renal aguda (LRA) en pacientes en riesgo. Existen varias escalas para clasificar la LRA:</p>
+
+    <ul>
+        <li><strong>KDIGO:</strong> Basada en cambios en la creatinina sérica y en la tasa de producción de orina. Es la más reciente y busca unificar criterios de las escalas RIFLE y AKIN.</li>
+        <li><strong>AKIN:</strong> Se centra en cambios agudos (48 horas) en la creatinina sérica y en la tasa de producción de orina.</li>
+        <li><strong>RIFLE:</strong> Clasifica la LRA en tres grados de severidad (Riesgo, Lesión y Fallo) y dos categorías adicionales (Pérdida y Función renal de final de etapa).</li>
+    </ul>
+    <p>Estas escalas ayudan a identificar pacientes con LRA, permitiendo intervenciones tempranas y mejorando el pronóstico.</p>
+
+    <h4>Consideraciones en la Práctica Clínica</h4>
+    <p>Es esencial correlacionar la TFG y la clasificación de LRA con la presentación clínica del paciente. La identificación temprana de la disfunción renal y la intervención adecuada pueden prevenir la progresión y mejorar los resultados del paciente.</p>
+
+{% endblock %}

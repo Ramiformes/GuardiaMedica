@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   División de guardias
+{% endblock %}
+
+{% block main %}
+
+<!-- Contenido principal -->
+<h1 class="Bienvenido"> División de la guardia</h1>
+<div class="container mt-4">
+    Para que se puedan ir a dormir tranquilos sabiendo que la divisón de turnos durante la guardia se hizo de manera adecuada.
+    Salu2.
+    <h2> Calculadora de división de guardias</h2>
+    <form id="division_guardias" method="post" action="/division_guardia">
+        <div class="col-md-6">
+            <label for="number" class="form-label">Número de personas en la división </label>
+            <input type="number" class="form-control" id="number" name="number" step="1" required>
+        </div>
+        <div class="col-md-6">
+            <label for="time1" class="form-label">¿A partir de qué hora?</label>
+            <input type="time" class="form-control" id="time1" name="time1" required>
+        </div>
+        <div class="col-md-6">
+            <label for="time2" class="form-label">¿Hasta qué hora?</label>
+            <input type="time" class="form-control" id="time2" name="time2" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Dividir</button>
+    </form>
+
+    <!-- Aquí está el elemento agregado para mostrar los resultados -->
+    <div id="division"></div>
+
+    {% if turnos %}
+    <h3>Turnos asignados:</h3>
+    <ul>
+    {% for turno in turnos %}
+        <li>De {{ turno[0].strftime('%H:%M') }} a {{ turno[1].strftime('%H:%M') }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+
+<script>
+    document.getElementById('division_guardias').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita el envío normal del formulario
+<!--Comentario y salu2-->
+        // Recopila los datos del formulario
+        const formData = new FormData(this);
+
+        // Envía los datos mediante AJAX
+        fetch('/division_guardia', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Muestra los resultados
+            let resultado = document.getElementById('division');
+            resultado.innerHTML = '';
+            data.turnos.forEach(turno => {
+                resultado.innerHTML += `De ${turno[0]} a ${turno[1]}<br>`;
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+</script>
+
+{% endblock %}

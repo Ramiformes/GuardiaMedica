@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Peso Predicho ARDSnet
+{% endblock %}
+
+{% block main %}
+
+<form id="form-ardsnet">
+    <h2>Calculadora de Peso Predicho ARDSnet</h2>
+
+    <label for="genero">Género:</label>
+    <select id="genero" name="genero" required>
+        <option value="hombre">Hombre</option>
+        <option value="mujer">Mujer</option>
+    </select>
+    <div class="spacing"></div>
+
+    <label for="altura">Altura en centímetros:</label>
+    <input type="number" id="altura" name="altura" step="0.1" required>
+    <div class="spacing"></div>
+
+    <input type="submit" value="calcular">
+</form>
+
+<h3 id="resultadoPesoPredicho">Peso predicho: </h3>
+
+<hr>
+
+<h3>Información Clínica sobre el Peso Predicho</h3>
+<p>El peso predicho es una herramienta esencial en la medicina crítica, especialmente en el manejo de pacientes con síndrome de dificultad respiratoria aguda (SDRA) o aquellos que requieren ventilación mecánica. Se utiliza para calcular el volumen tidal óptimo en pacientes intubados, lo que puede ayudar a optimizar la ventilación y reducir el riesgo de lesiones pulmonares inducidas por el ventilador.</p>
+
+<h4>Utilidad en Ventilación Mecánica</h4>
+<p>El cálculo del volumen tidal basado en el peso predicho es una estrategia clave recomendada por ARDSnet para pacientes con SDRA. La ventilación con un volumen tidal más bajo (aproximadamente 6 ml/kg de peso predicho) ha demostrado reducir la mortalidad en estos pacientes. Es esencial ajustar el volumen tidal según el peso predicho y no el peso real, ya que esto puede ayudar a prevenir la sobredistensión pulmonar y otras complicaciones asociadas con volúmenes tidales más altos.</p>
+
+<p>Es crucial correlacionar el peso predicho y el volumen tidal con la presentación clínica del paciente y ajustar la ventilación según las necesidades del paciente y la respuesta al tratamiento.</p>
+
+{% endblock %}

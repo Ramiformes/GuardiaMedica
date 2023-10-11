@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Calculadora de Superficie Corporal Total (BSA)
+{% endblock %}
+
+{% block main %}
+<h2>Calculadora de Superficie Corporal Total (BSA)</h2>
+<p>La fórmula de BSA se utiliza para estimar la superficie corporal total de un individuo. Es una medida importante en la dosificación de medicamentos y en la evaluación de la función renal y cardíaca.</p>
+
+<form id="bsaCalculator">
+    <div class="col-md-6">
+        <label for="height" class="form-label">Altura (cm)</label>
+        <input type="number" class="form-control" id="height" name="height">
+    </div>
+
+    <div class="col-md-6">
+        <label for="weight" class="form-label">Peso (kg)</label>
+        <input type="number" class="form-control" id="weight" name="weight">
+    </div>
+
+    <div class="col-md-6">
+        <label for="formula" class="form-label">Fórmula</label>
+        <select class="form-control" id="formula" name="formula">
+            <option value="dubois">DuBois y DuBois</option>
+            <option value="costeff">Hanan Costeff</option>
+        </select>
+    </div>
+
+    <button type="button" id="calculateBSA" class="btn btn-primary">Calcular</button>
+    
+
+
+</form>
+<p>Resultado BSA: <span id="result">{{ bsa_result if bsa_result is not none else '-' }}</span> m<sup>2</sup></p>
+
+<hr>
+
+<h3>Información Adicional</h3>
+<p>Existen varias fórmulas para calcular la Superficie Corporal Total (BSA). Las dos fórmulas proporcionadas aquí son:</p>
+<ul>
+    <li><strong>DuBois y DuBois:</strong> \( BSA = 0.007184 \times \text{Altura}^{0.725} \times \text{Peso}^{0.425} \)</li>
+    <li><strong>Hanan Costeff:</strong>
+        <ul>
+            <li>Para pesos menores o iguales a 10 kg: \( BSA = \frac{(Peso \times 4) + 9}{100} \)</li>
+            <li>Para pesos mayores a 10 kg: \( BSA = \frac{(Peso \times 4) + 7}{Peso + 90} \)</li>
+        </ul>
+    </li>
+</ul>
+<p>Es importante tener en cuenta que estas fórmulas son aproximaciones y pueden no ser precisas en todas las situaciones clínicas. Es esencial considerar el contexto clínico del paciente y utilizar el juicio clínico al interpretar los resultados.</p>
+{% endblock %}

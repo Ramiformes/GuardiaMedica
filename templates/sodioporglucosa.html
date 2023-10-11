@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Corrección de Sodio por Glucosa
+{% endblock %}
+
+{% block main %}
+<h2>Corrección de Sodio por Glucosa</h2>
+<p>La fórmula de corrección de sodio por glucosa se utiliza para estimar el nivel de sodio sérico corregido en pacientes con hiperglucemia. La hiperglucemia puede causar una disminución aparente en el sodio sérico debido a un efecto osmótico que lleva agua fuera de las células y diluye el sodio en el plasma.</p>
+    <form id="sodiumCorrectionForm">
+        <div class="col-md-6">
+            <label for="measuredSodium" class="form-label">Sodio Medido (mEq/L)</label>
+            <input type="number" class="form-control" id="measuredSodium" name="measuredSodium">
+        </div>
+
+        <div class="col-md-6">
+            <label for="serumGlucose" class="form-label">Glucosa Sérica (mg/dL)</label>
+            <input type="number" class="form-control" id="serumGlucose" name="serumGlucose">
+        </div>
+
+        <div class="col-md-6">
+            <label for="correctionFactor" class="form-label">Factor de Corrección (usualmente entre 1.2 y 2.4)</label>
+            <input type="number" class="form-control" id="correctionFactor" name="correctionFactor" step="0.1" value="1.6">
+        </div>
+
+        <button type="button" class="btn btn-primary" id="calculateButton">Calcular</button>
+
+    </form>
+    <p>Sodio Corregido: <span id="correctedSodium">{{ corrected_sodium if corrected_sodium is not none else '-' }}</span></p>
+
+
+    <hr>
+
+    <h3>Información Adicional</h3>
+    <p>La fórmula tradicionalmente aceptada para corregir el sodio en presencia de hiperglucemia es:</p>
+    <p>\[ \text{Sodio corregido} = \text{Sodio medido} + \frac{\text{Glucosa sérica} - 100}{100} \times F \]</p>
+    <p>Donde:</p>
+    <ul>
+        <li>\(\text{Sodio medido}\) es el valor de sodio sérico obtenido del laboratorio.</li>
+        <li>\(\text{Glucosa sérica}\) es el nivel de glucosa en sangre.</li>
+        <li>\(F\) es el factor de corrección, que varía según diferentes fuentes. Tradicionalmente, se ha utilizado
+            un factor de 1.6, pero algunos estudios sugieren que puede variar entre 1.2 y 2.4, dependiendo de la situación clínica y el grado de hiperglucemia.</li>
+            </ul>
+            <p>El valor de 1.6 es el más comúnmente utilizado, pero es importante tener en cuenta que esta fórmula es una aproximación y puede no ser precisa en todas las situaciones clínicas. Es esencial considerar el contexto clínico del paciente y utilizar el juicio clínico al interpretar los resultados.</p>
+            {% endblock %}
